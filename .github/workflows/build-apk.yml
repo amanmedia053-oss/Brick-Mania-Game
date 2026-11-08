@@ -28,8 +28,7 @@ jobs:
         run: flutter create . --platforms=android --org com.brickmania.game --project-name brick_mania_game
       - name: Use reliable Gradle distribution endpoint
         run: |
-          sed -i 's#https\\://services.gradle.org/distributions/#https\\://downloads.gradle.org/distributions/#' android/gradle/wrapper/gradle-wrapper.properties
-          sed -i 's/-all.zip/-bin.zip/' android/gradle/wrapper/gradle-wrapper.properties
+          sed -i 's#services.gradle.org#downloads.gradle.org#; s/-all.zip/-bin.zip/' android/gradle/wrapper/gradle-wrapper.properties
       - name: Cache Gradle distributions and dependencies
         uses: gradle/actions/setup-gradle@v4
       - name: Get dependencies
