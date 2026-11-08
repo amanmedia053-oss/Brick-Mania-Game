@@ -199,7 +199,7 @@ class _GameScreenState extends State<GameScreen> {
 
   void _movePaddle(Offset local) {
     if (board == Size.zero) return;
-    setState(() => paddleX = local.dx.clamp(paddleWidth / 2 + 4, board.width - paddleWidth / 2 - 4));
+    setState(() => paddleX = local.dx.clamp(paddleWidth / 2 + 4, board.width - paddleWidth / 2 - 4).toDouble());
   }
 
   @override
